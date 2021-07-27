@@ -68,49 +68,46 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
-        actions: <Widget>[
-          TextButton(
-            child: Row(
-              children: <Widget>[
-                Text('Signup'),
-                Icon(Icons.person_add)
-              ],
-            ),
-            // textColor: Colors.white,
-            onPressed: (){
-              Navigator.of(context).pushReplacementNamed(SignupScreen.routeName);
-            },
-          )
-        ],
+        title: Text('Notes App'),
+        backgroundColor: Colors.black,
       ),
       body: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              // gradient: LinearGradient(
-              //   colors: [
-              //     Colors.lightGreenAccent,
-              //     Colors.blue,
-              //   ]
-              // )
-              color: Colors.blue,
+              image: DecorationImage(
+            image: AssetImage("images/galaxy.jpg"),
+            fit: BoxFit.cover,
+
+            
+          ),
+              
+              // color: Colors.blue,
             ),
           ),
           Center(
             child: Card(
+            elevation: 0,
+            color: Colors.transparent,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Container(
-                height: 260,
+                height: 350,
                 width: 300,
+                color: Colors.white38,
                 padding: EdgeInsets.all(16),
                 child: Form(
                   key: _formKey,
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
+                        SizedBox(
+                          
+                          height: 40,
+                          child: Text('Login', style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.w600 ), ),
+                          
+                        ),
                         //email
                         TextFormField(
                           decoration: InputDecoration(labelText: 'Email'),
@@ -151,14 +148,38 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         ElevatedButton(
                           child: Text(
-                            'Submit'
+                            'Login',
                           ),
                           onPressed: ()
                           {
                             _submit();
                           },
+                          style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                ),
                          
-                        )
+                        ),
+                        Column(
+                          children: [
+                            // Padding(padding: EdgeInsets.all(10)),
+                            Text("Don't have an account?"),
+                            TextButton(
+            child: Center(
+              child: 
+                Column(
+                  children: [
+                    Icon(Icons.person_add, color: Colors.black,),
+                    Text('Signup', style: TextStyle(fontSize: 16, color: Colors.black,),),
+                  ],
+                ),
+            ),
+
+            onPressed: (){
+              Navigator.of(context).pushReplacementNamed(SignupScreen.routeName);
+            },
+          )
+                          ],
+                        ),
                       ],
                     ),
                   ),

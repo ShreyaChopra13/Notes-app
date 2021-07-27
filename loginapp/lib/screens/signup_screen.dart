@@ -68,50 +68,64 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Signup'),
+        title: Text('Notes App'),
 
-        actions: <Widget>[
-          TextButton(
-            child: Row(
-              children: <Widget>[
-                Text('Login'),
-                Icon(Icons.person)
-              ],
-            ),
-            // textColor: Colors.white,
-            onPressed: (){
-              Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
-            },
-          )
-        ],
+        // actions: <Widget>[
+        //   TextButton(
+        //     child: Row(
+        //       children: <Widget>[
+        //         Text('Login',style: TextStyle(fontSize: 16,),),
+        //         Icon(Icons.person)
+        //       ],
+        //     ),
+        //     // textColor: Colors.white,
+        //     onPressed: (){
+        //       Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
+        //     },
+        //   ),
+        // ],
       ),
       body: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
+              
                 // gradient: LinearGradient(
                 //     colors: [
                 //       Colors.limeAccent,
                 //       Colors.redAccent,
                 //     ]
                 // )
-                 color: Colors.blue,
+                //  color: Colors.blue,
+                 image: DecorationImage(
+            image: AssetImage("images/galaxy.jpg"),
+            fit: BoxFit.cover,),
             ),
           ),
           Center(
             child: Card(
+              elevation: 0,
+            color: Colors.transparent,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: Container(
-                height: 300,
+                
+                height: 400,
                 width: 300,
+                color: Colors.white38,
                 padding: EdgeInsets.all(16),
                 child: Form(
                   key: _formKey,
                   child: SingleChildScrollView(
                     child: Column(
                       children: <Widget>[
+                        SizedBox(
+                          
+                          height: 40,
+                          child: Text('Sign Up', style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.w600 ), ),
+                          
+                        ),
                         //email
                         TextFormField(
                           decoration: InputDecoration(labelText: 'Email'),
@@ -171,18 +185,39 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                         ElevatedButton(
                           child: Text(
-                              'Submit'
+                              'Register'
                           ),
                           onPressed: ()
                           {
                             _submit();
                           },
-                          // shape: RoundedRectangleBorder(
-                          //   borderRadius: BorderRadius.circular(30),
-                          // ),
-                          // color: Colors.blue,
-                          // textColor: Colors.white,
-                        )
+                          style: ElevatedButton.styleFrom(
+                primary: Colors.black,
+                ),
+
+                        ),
+                        Column(
+                          children: [
+                            // Padding(padding: EdgeInsets.all(5)),
+                            Text("Already have an account?"),
+                            TextButton(
+            child: Center(
+              child: 
+                Column(
+                  children: [
+                    Icon(Icons.person, color: Colors.black,),
+                    Text('Login', style: TextStyle(fontSize: 16, color: Colors.black,),),
+                  ],
+                ),
+            ),
+
+            onPressed: (){
+              Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
+            },
+            
+          )
+                          ],
+                        ),
                       ],
                     ),
                   ),

@@ -16,8 +16,8 @@ class HomeScreen extends StatelessWidget {
           TextButton(
             child: Row(
               children: <Widget>[
-                Text('Logout'),
-                Icon(Icons.person_add)
+                Text('Logout ',style: TextStyle(color: Colors.white),),
+                Icon(Icons.person_add,color: Colors.white,)
               ],
             ),
             // textColor: Colors.white,
@@ -29,9 +29,10 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Home', style: TextStyle(
+          'Home Page \nComing Soon', style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20,
+          
         ),
         ),
       ),

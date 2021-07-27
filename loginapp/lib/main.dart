@@ -18,9 +18,10 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Login App',
         theme: ThemeData(
-          primaryColor: Colors.white,
+          primaryColor: Colors.black,
         ),
         home: LoginScreen(),
         routes: {

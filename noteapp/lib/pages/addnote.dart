@@ -23,14 +23,6 @@ class _AddNoteState extends State<AddNote> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: add,
-          //  {
-          // Navigator.of(context).pop();
-
-          //   MaterialPageRoute(
-          //     builder: (context) => AddNote(),
-          //   ),
-          // );
-          // },
           child: Icon(
             Icons.save,
             color: Colors.white,
@@ -42,27 +34,6 @@ class _AddNoteState extends State<AddNote> {
             padding: EdgeInsets.all(12.0),
             child: Column(
               children: [
-                //   Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                //     children: [
-                //       // alignment: Alignment.topRight,
-                //       SizedBox(
-                //         width: 1,
-                //       ),
-                //       ElevatedButton(
-                //         onPressed: (){},
-
-                //         child: Text('Save', style: TextStyle(fontSize: 30),
-                //         ),
-                //         style: ElevatedButton.styleFrom(
-                //   primary: Colors.indigo,
-
-                // ),
-
-                //       )
-                //     ],
-                //   ),
                 Form(
                   child: Column(
                     children: [

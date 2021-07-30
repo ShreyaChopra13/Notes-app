@@ -1,22 +1,15 @@
 // @dart=2.9
 
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase/firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-// import 'package:noteapp/pages/addnote.dart';
-
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:noteapp/pages/addnote.dart';
 import 'package:noteapp/pages/viewnote.dart';
 
 class HomePage extends StatefulWidget {
-  // static const routeName = '/home';
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -66,9 +59,6 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.indigo,
       ),
-      // body: Center(
-      //   child: Text('Notes!'),
-      // ),
       body: FutureBuilder<QuerySnapshot>(
         future: ref.get(),
         builder: (context, snapshot) {

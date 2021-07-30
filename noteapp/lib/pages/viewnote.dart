@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 
 class ViewNote extends StatefulWidget {
   final Map data;
-  // final String time;
   final DocumentReference ref;
 
   ViewNote(this.data, this.ref);
@@ -29,23 +28,6 @@ class _ViewNoteState extends State<ViewNote> {
         appBar: AppBar(
           title: Text('Remarques'),
           backgroundColor: Colors.indigo[900],
-          // actions: <Widget>[
-          //   ElevatedButton(
-          //     child: Row(
-          //       children: <Widget>[
-          //         Icon(Icons.edit),
-          //       ],
-          //     ),
-          //     onPressed: () {
-          //       setState(() {
-          //         edit = !edit;
-          //       });
-          //     },
-          //     style: ElevatedButton.styleFrom(
-          //       primary: Colors.indigo,
-          //     ),
-          //   ),
-          // ],
         ),
         floatingActionButton: edit
             ? FloatingActionButton(
@@ -54,14 +36,6 @@ class _ViewNoteState extends State<ViewNote> {
                 backgroundColor: Colors.indigo,
               )
             : null,
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: delete,
-        //   child: Icon(
-        //     Icons.delete_forever,
-        //     color: Colors.white,
-        //   ),
-        //   backgroundColor: Colors.red,
-        // ),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(12.0),
@@ -142,11 +116,6 @@ class _ViewNoteState extends State<ViewNote> {
                             ),
                           ),
 
-                          //  Text(
-                          //   "${widget.data['description']}",
-                          //   style: TextStyle(
-                          //       fontSize: 20.0, fontWeight: FontWeight.w400),
-                          // ),
                         ],
                       ),
                     ),

@@ -8,12 +8,12 @@ The app asks for user signup on the first page. In case you already have an acco
 
 
 #### Dependencies 
-firebase: ^9.0.0
-firebase_core: ^1.0.1
-firebase_auth: ^1.0.1
-cloud_firestore: ^1.0.1
-google_sign_in: ^5.0.0
-intl: ^0.17.0
+- firebase: ^9.0.0
+- firebase_core: ^1.0.1
+- firebase_auth: ^1.0.1
+- cloud_firestore: ^1.0.1
+- google_sign_in: ^5.0.0
+- intl: ^0.17.0
 
 
 #### Executing Program
@@ -25,7 +25,7 @@ intl: ^0.17.0
 
 
 #### Authors
-Shreya Chopra
-Anamika Srivastava
-Shiti Garg
-Aditya Kuthiala
+- Shreya Chopra
+- Anamika Srivastava
+- Shiti Garg
+- Aditya Kuthiala

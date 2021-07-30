@@ -81,7 +81,7 @@ class _AddNoteState extends State<AddNote> {
         .doc(FirebaseAuth.instance.currentUser.uid)
         .collection('notes');
 
-    var data = {'title': title, 'description': des, 'created': DateTime.now()};
+    var data = {'title': title, 'description': des,};
     ref.add(data);
     Navigator.pop(context);
   }

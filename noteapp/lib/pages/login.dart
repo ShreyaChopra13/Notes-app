@@ -99,9 +99,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notes App'),
+        title: Text('Remarques'),
         backgroundColor: Colors.indigo[900],
-      ),
+      ), 
       body: Center(
         child: Column(
           children: [

@@ -1,5 +1,7 @@
 // @dart=2.9
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AddNote extends StatefulWidget {
@@ -16,29 +18,57 @@ class _AddNoteState extends State<AddNote> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Notes App'),
+          title: Text('Remarques'),
           backgroundColor: Colors.indigo[900],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: add,
+          //  {
+          // Navigator.of(context).pop();
+
+          //   MaterialPageRoute(
+          //     builder: (context) => AddNote(),
+          //   ),
+          // );
+          // },
+          child: Icon(
+            Icons.save,
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.indigo,
+        ),
         body: SingleChildScrollView(
-          child: 
-          Container(
+          child: Container(
             padding: EdgeInsets.all(12.0),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    // ElevatedButton(
-                    //   onPressed: (){},
-                    // child: Icon(Icons.arrow_back_ios_new_outlined) ,
-                    // )
-                  ],
-                ),
+                //   Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                //     children: [
+                //       // alignment: Alignment.topRight,
+                //       SizedBox(
+                //         width: 1,
+                //       ),
+                //       ElevatedButton(
+                //         onPressed: (){},
+
+                //         child: Text('Save', style: TextStyle(fontSize: 30),
+                //         ),
+                //         style: ElevatedButton.styleFrom(
+                //   primary: Colors.indigo,
+
+                // ),
+
+                //       )
+                //     ],
+                //   ),
                 Form(
                   child: Column(
                     children: [
-                      // SizedBox(
-                      //   height: 4,
-                      // ),
+                      SizedBox(
+                        height: 4,
+                      ),
                       TextFormField(
                         decoration:
                             InputDecoration.collapsed(hintText: 'Add Title'),
@@ -47,6 +77,21 @@ class _AddNoteState extends State<AddNote> {
                         onChanged: (_val) {
                           title = _val;
                         },
+                        
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.75,
+                        padding: const EdgeInsets.only(top: 10),
+                        child: TextFormField(
+                          decoration: InputDecoration.collapsed(
+                              hintText: 'Add your Note'),
+                          style: TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.w400),
+                          onChanged: (_val) {
+                            des = _val;
+                          },
+                          maxLines: 20,
+                        ),
                       ),
                     ],
                   ),
@@ -57,5 +102,16 @@ class _AddNoteState extends State<AddNote> {
         ),
       ),
     );
+  }
+
+  void add() async {
+    CollectionReference ref = FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser.uid)
+        .collection('notes');
+
+    var data = {'title': title, 'description': des, 'created': DateTime.now()};
+    ref.add(data);
+    Navigator.pop(context);
   }
 }

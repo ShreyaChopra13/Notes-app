@@ -1,6 +1,6 @@
 # Remarques
 
-Remarques is a Flutter based app that provides a note-taking service. The app provides data protection as you store your notes only in your account. Need to remember to pick up some groceries? Need to finish a to-do? Need to write down the due dates of your assignments? Jot them all down in your notes and make sure you never miss a thing.
+Remarques is a Flutter-Firebase based app that provides a note-taking service. The app provides data protection as you store your notes only in your account. Need to remember to pick up some groceries? Need to finish a to-do? Need to write down the due dates of your assignments? Jot them all down in your notes and make sure you never miss a thing.
 
 
 ### Description
